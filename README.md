@@ -42,3 +42,9 @@ The user must follow the following steps :
 3. 
 <a name="Components"></a> 
 ## Components 
+There are several files and each of these files is a module containing a function to allow the extraction of the different desired information.
+#### 1. Extraction_of_the_cheapest_hotel
+
+#### 2. Meteo 
+
+#### 3. Twitter 
