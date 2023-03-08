@@ -1,7 +1,7 @@
  ## HOTELS BOOKING HELPER 
  <a name="hdp"></a> 
  
- ## Sommaire
+ ## Summary
  
 - General description
 - Structure
