@@ -44,7 +44,7 @@ The user must follow the following steps :
 ## Components 
 There are several files and each of these files is a module containing a function to allow the extraction of the different desired information.
 #### 1. Extraction_of_the_cheapest_hotel
-
+This module contains the function to determine the cheapest hotel for a given destination, dates and number of adults.
 #### 2. Meteo 
 
 #### 3. Twitter 
