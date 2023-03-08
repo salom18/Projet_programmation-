@@ -1,13 +1,13 @@
- #Hotels booking helper 
+ ## HOTELS BOOKING HELPER 
  <a name="hdp"></a> 
  
  ## Sommaire
  
-- [General description]
-- [Structure]
-- [Utilisation]
-- [Components]
-- [Main difficulties]
+- General description
+- Structure
+- Utilisation
+- Components
+- Main difficulties
 
 <a name="Description"></a> 
 ## Description
@@ -15,9 +15,9 @@ This program is intended to facilitate the booking of hotels on the Hotels.com s
 
 <a name="Structure"></a>
 ## Structure
-In " " you will find the whole script of our program. 
-In " " you will find all the packages we used. 
-In " " you will find all the functions we used. 
-In " " you will find the code which allows to extract the cheapest hotel from the Hotels.com website 
-In " " you will find the code which allows to obtain the meteo of a specific city at specific dates.
-In " " you will find the code which allows to obtain the tweets about a specific city. 
+-In " " you will find the whole script of our program. 
+-In " " you will find all the packages we used. 
+-In " " you will find all the functions we used. 
+-In " " you will find the code which allows to extract the cheapest hotel from the Hotels.com website 
+-In " " you will find the code which allows to obtain the meteo of a specific city at specific dates.
+-In " " you will find the code which allows to obtain the tweets about a specific city. 
