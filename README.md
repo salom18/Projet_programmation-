@@ -43,9 +43,9 @@ The user must follow the following steps :
 <a name="Description of each file"></a> 
 ## Description of each file 
 There are several files and each of these files is a module containing a function to allow the extraction of the different desired information.
-#### 1. Cheapest_hotel
+#### Cheapest_hotel
 This module contains the function to extract the cheapest hotel for a given destination, dates and number of adults, on the Hotels.com website. 
-#### 2. Meteo 
+#### Meteo 
 This module contains the function to determine the meteo for a given city and dates. We used the API OpenWeatherMap. 
-#### 3. Twitter 
+#### Twitter 
 This module contains the function to detect the number of tweets about a specific city and the sentiments expressed in the tweets about this city. 
