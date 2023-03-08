@@ -26,7 +26,7 @@ This program is intended to facilitate the booking of hotels on the Hotels.com s
 ## Utilisation
 The user must follow the following steps : 
 1. Download the file hotels_booking_helper
-2. Download the following packages : 
+2. Open a terminal and copy and paste the following packages : 
 - pip install pyowm
 - pip install urllib.request
 - pip install json
@@ -39,6 +39,6 @@ The user must follow the following steps :
 - pip install textblob 
 - pip install sys
 - pip install selenium
-
+3. 
 <a name="Components"></a> 
 ## Components 
