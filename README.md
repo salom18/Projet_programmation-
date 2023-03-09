@@ -11,7 +11,7 @@
 
 <a name="General description"></a> 
 ## General description
-This program is intended to facilitate your trips by giving you informations about the weather,the cheapest hotel (its name and price)of the city you're traveling to and also some opinions of what people think about the city based on last 30 day tweets. The user selects the city, the check-in and the check-out date as well as the number of adults and the program sends an email with all the details.
+This program is intended to facilitate your trips by giving you informations about the weather, the cheapest hotel (its name and price)of the city you're traveling to and also some opinions of what people think about the city based on last 30 day tweets. The user selects the city, the check-in and the check-out date as well as the number of adults and the program sends an email with all the details.
 
 <a name="Structure"></a>
 ## Structure
