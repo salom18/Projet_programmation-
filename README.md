@@ -1,4 +1,4 @@
- ## TRIP HELPER 
+ ## TRIP INFORMATION PROVIDER
  <a name="hdp"></a> 
  
  ## Summary
