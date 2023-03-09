@@ -44,8 +44,10 @@ The user must follow the following steps :
 ## Description of each file 
 There are several files and each of these files is a module containing a function to allow the extraction of the different desired information.
 #### Cheapest_hotel
-This module contains the function to extract the cheapest hotel for a given destination, dates and number of adults, on the Hotels.com website. 
+This module contains the function to extract the cheapest hotel(its name and price) for a given destination, date and number of adults. The information is found on the Hotels.com website. 
 #### Meteo 
-This module contains the function to determine the meteo for a given city and dates. We used the API OpenWeatherMap. 
+This module contains the function to determine the average temperature for a given city and dates. We used the API OpenWeatherMap. 
 #### Twitter 
-This module contains the function to detect the number of tweets about a specific city and the sentiments expressed in the tweets about this city. 
+This module contains the function to detect the number of tweets for the last 30 days about a specific city and the sentiments expressed.
+#### Mail
+This module contains the mail function which asks the user for their email address and sends an email with all the details : average temperature, cheapest hotel and tweets. 
