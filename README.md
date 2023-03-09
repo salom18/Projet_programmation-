@@ -1,4 +1,4 @@
- ## HOTELS BOOKING HELPER 
+ ## TRIP HELPER 
  <a name="hdp"></a> 
  
  ## Summary
