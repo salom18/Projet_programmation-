@@ -54,7 +54,7 @@ This module contains the mail function which asks the user for their email addre
 
 <a name="Main difficulties"></a> 
 ## Main difficulties 
-#### 1.API 
+#### API 
 We first wanted to use the Hotels.com's API but it did not display a clear and precise list of hotels so we finally chose Web scraping.
-#### 2. Web scraping 
+#### Web scraping 
 Extracting hotel price and hotel name from the Hotels.com website : the Xpaths were too difficult to exploit. 
