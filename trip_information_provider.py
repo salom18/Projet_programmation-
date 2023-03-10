@@ -106,7 +106,7 @@ def find_hotels():
     return(hotel_cheap)
 
 
-####PART 3 - Find tweets and nature of tweets for the last 100 days for a given word###
+####PART 3 - Find tweets and nature of 100 tweets for the last 30 days for a given word###
 
 def analyze_sentiment(city):
     noOfTweet=100
