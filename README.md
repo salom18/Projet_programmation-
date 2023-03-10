@@ -39,7 +39,7 @@ The user must follow the following steps :
 - pip install textblob 
 - pip install sys
 - pip install selenium
-3. 
+
 <a name="Description of each file"></a> 
 ## Description of each file 
 There are several files and each of these files is a module containing a function to allow the extraction of the different desired information.
@@ -51,3 +51,10 @@ This module contains the function to determine the average temperature for a giv
 This module contains the function to detect the number of tweets for the last 30 days about a specific city and the sentiments expressed.
 #### Mail
 This module contains the mail function which asks the user for their email address and sends an email with all the details : average temperature, cheapest hotel and tweets. 
+
+<a name="Main difficulties"></a> 
+## Main difficulties 
+#### 1.API 
+We first wanted to use the Hotels.com's API but it did not display a clear and precise list of hotels so we finally chose Web scraping.
+#### 2. Web scraping 
+Extracting hotel price and hotel name from the Hotels.com website : the Xpaths were too difficult to exploit. 
