@@ -21,7 +21,6 @@ This program is intended to facilitate your trips by giving you informations abo
 - In "name_file" you will find the code which allows to extract the cheapest hotel from the Hotels.com website 
 - In "name_file" you will find the code which allows to obtain the meteo of a specific city at specific dates.
 - In "name_file" you will find the code which allows to obtain the tweets about a specific city. 
-
 <a name="Utilisation"></a>
 ## Utilisation
 The user must follow the following steps : 
