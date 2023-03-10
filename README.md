@@ -15,7 +15,7 @@ This program is intended to facilitate your trips by giving you informations abo
 
 <a name="Structure"></a>
 ## Structure
-- In "name_file " you will find the whole script of our program. 
+- In "trip_information_provider.py" you will find the whole script of our program. 
 - In "name_file" you will find all the packages we used. 
 - In "name_file" you will find all the functions we used. 
 - In "name_file" you will find the code which allows to extract the cheapest hotel from the Hotels.com website 
