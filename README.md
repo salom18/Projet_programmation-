@@ -24,7 +24,7 @@ This program is intended to facilitate your trips by giving you informations abo
 <a name="Utilisation"></a>
 ## Utilisation
 The user must follow the following steps : 
-1. Download the file hotels_booking_helper
+1. Download the file trip_information_provider
 2. Open a terminal and copy and paste the following packages : 
 - pip install pyowm
 - pip install urllib.request
@@ -38,6 +38,7 @@ The user must follow the following steps :
 - pip install textblob 
 - pip install sys
 - pip install selenium
+3. Execute the program by entering the information the user is asked about and waiting for the result in their email address.
 
 <a name="Description of each file"></a> 
 ## Description of each file 
