@@ -58,3 +58,5 @@ This module contains the mail function which asks the user for their email addre
 We first wanted to use the Hotels.com's API but it did not display a clear and precise list of hotels so we finally chose Web scraping.
 #### Web scraping 
 Extracting hotel price and hotel name from the Hotels.com website : the Xpaths were too difficult to exploit. 
+### Weather function 
+There were some problems with the attributes, and also with the openweathermap API so we used import pyowm and then entered the API key
