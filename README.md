@@ -17,10 +17,9 @@ This program is intended to facilitate your trips by giving you informations abo
 ## Structure
 - In "trip_information_provider.py" you will find the whole script of our program. 
 - In "packages.ipynb" you will find all the packages we used. 
-- In "name_file" you will find all the functions we used. 
-- In "name_file" you will find the code which allows to extract the cheapest hotel from the Hotels.com website 
-- In "name_file" you will find the code which allows to obtain the meteo of a specific city at specific dates.
-- In "name_file" you will find the code which allows to obtain the tweets about a specific city. 
+- In "cheapest_hotel.ipynb" you will find the code which allows to extract the cheapest hotel from the Hotels.com website 
+- In "average_temp.ipynb" you will find the code which allows to obtain the average temperature of a specific city in specific dates.
+- In "tweetssentiment" you will find the code which allows to obtain the tweets about a specific city. 
 <a name="Utilisation"></a>
 ## Utilisation
 The user must follow the following steps : 
