@@ -38,17 +38,17 @@ The user must follow the following steps :
 - pip install textblob 
 - pip install sys
 - pip install selenium
-3. Execute the program by entering the information the user is asked about and waiting for the result in their email address.
+3. Execute the program by entering the information the user is asked about and waiting for the result in your email address.
 
 <a name="Description of each file"></a> 
 ## Description of each file 
 There are several files and each of these files is a module containing a function to allow the extraction of the different desired information.
 #### Cheapest_hotel
-This module contains the function to extract the cheapest hotel(its name and price) for a given destination, date and number of adults. The information is found on the Hotels.com website. 
+This module contains the function to extract the cheapest hotel(its name and price) for a given destination, date and number of adults. Information is found on the Hotels.com website. 
 #### Meteo 
-This module contains the function to determine the average temperature for a given city and dates. We used the API OpenWeatherMap. 
+This module contains the function to determine the average temperature for a given city and dates. We used the OpenWeatherMap API. 
 #### Twitter 
-This module contains the function to detect the number of tweets for the last 30 days about a specific city and the sentiments expressed.
+This module contains the function to detect the number of tweets for the last 30 days about a specific city and the sentiments expressed. We used TextBlob. 
 #### Mail
 This module contains the mail function which asks the user for their email address and sends an email with all the details : average temperature, cheapest hotel and tweets. 
 
@@ -58,5 +58,5 @@ This module contains the mail function which asks the user for their email addre
 We first wanted to use the Hotels.com's API but it did not display a clear and precise list of hotels so we finally chose Web scraping.
 #### Web scraping 
 Extracting hotel price and hotel name from the Hotels.com website : the Xpaths were too difficult to exploit. 
-### Weather function 
-There were some problems with the attributes, and also with the openweathermap API so we used import pyowm and then entered the API key
+#### Weather function 
+There were some problems with the attributes, and also with the Openweathermap API so we used import pyowm and then entered the API key
