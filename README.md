@@ -38,6 +38,9 @@ The user must follow the following steps :
 - pip install textblob 
 - pip install sys
 - pip install selenium
+- pip install requests
+- pip install beautifulsoup4
+- pip install urllib
 3. Execute the program by entering the information the user is asked about and waiting for the result in your email address.
 
 <a name="Description of each file"></a> 
