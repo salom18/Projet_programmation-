@@ -20,7 +20,7 @@ This program is intended to facilitate your trips by giving you informations abo
 - In "cheapest_hotel.ipynb" you will find the code which allows to extract the cheapest hotel from the Hotels.com website 
 - In "avg_temp.py" you will find the code which allows to obtain the average temperature of a specific city in specific dates.
 - In "tweetsentiment" you will find the code which allows to obtain the tweets about a specific city. 
-- In "sendemail.ipynb" you will find the function which allow to send an email with all the trip informations from the functions created above
+- In "sendmail.ipynb" you will find the function which allow to send an email with all the trip informations from the functions created above
 <a name="Utilisation"></a>
 ## Utilisation
 The user must follow the following steps : 
