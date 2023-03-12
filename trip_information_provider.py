@@ -1,37 +1,37 @@
-import pyowm
-import requests
-import os
-from datetime import datetime, timedelta
-import urllib.request
-from urllib.request import urlopen
-import json
-import ssl
-import schedule
-import time
-import smtplib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime as dt
 import re
 from wordcloud import WordCloud, STOPWORDS
+from textblob import TextBlob
 import snscrape.modules.twitter as sntwitter
 import nltk
-from textblob import TextBlob
 import sys
+import requests
+import urllib.parse
+import string
+from bs4 import BeautifulSoup
+import smtplib
+import time
+import pyowm
+from datetime import datetime, timedelta
+import urllib.request
+from urllib.request import urlopen
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import StaleElementReferenceException
+from datetime import datetime, timedelta
+import urllib.request
+from urllib.request import urlopen
+import os
+import json
+import ssl
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.safari.webdriver import WebDriver as SafariDriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import StaleElementReferenceException
-from selenium.webdriver.common.action_chains import ActionChains
 import unicodedata
-from bs4 import BeautifulSoup
 from lxml import html
-import string
 
 #Get user input
 
