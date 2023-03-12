@@ -8,6 +8,7 @@ from textblob import TextBlob
 import snscrape.modules.twitter as sntwitter
 import nltk
 import sys
+import string
 
 city=input("Enter a city: ")
 ###Find 100 tweets for the last 30 days###
