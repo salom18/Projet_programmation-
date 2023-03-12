@@ -1,4 +1,4 @@
-###PARTIE 2 - Trouver l'hotel le moins cher 
+###Second part-Find the cheapest hotel and extract its name and price per night 
 
 import requests
 import string
