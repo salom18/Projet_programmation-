@@ -1,0 +1,247 @@
+---
+title: "Trip information provider"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Présentation du projet 
+
+Programme destiné à faciliter vos voyages en vous donnant des infos sur : 
+
+-la météo
+
+-l'hôtel le moins cher de la ville où vous vous rendez 
+
+-des avis récents sur ce que les gens pensent de la ville sur la base des 100 tweets des 30 derniers jours. 
+
+L'utilisateur sélectionne la ville, la date d'arrivée et de départ ainsi que le nombre d'adultes et le programme envoie un e-mail avec tous les détails.
+
+## Démonstration de l'outil 
+
+## I. Afficher la température moyenne d'une ville entre la date de départ et d'arrivée 
+
+On utilise l'API OpenWeatherMap. 
+
+## Création d'une fonction avec la ville et les dates d'arrivée et de départ 
+```
+def get_avg_weather(city, checkin_date, checkout_date):
+    owm = pyowm.OWM("5ebbddc757117fab77a6c7785688f4a1") #API 
+    start_date = datetime.strptime(checkin_date,'%Y-%m-%d')
+    end_date = datetime.strptime(checkout_date,'%Y-%m-%d')+timedelta(days=1)
+```
+## Si jamais la date de départ est plus élevée que la date de fin... 
+```
+if start_date >= end_date:
+        return -1
+    daily_forecasts = []
+    while start_date < end_date:
+        try:
+            observation = owm.weather_manager().weather_at_place(city)
+            weather = observation.weather
+            daily_forecasts.append(weather)
+        except pyowm.exceptions.api_response_error.NotFoundError:
+            print(f"Invalid city name: {city}")
+            return -1
+        start_date += timedelta(days=1)
+    total_temp = sum([f.temperature('celsius')['temp'] for f 
+in daily_forecasts])
+```
+## Calcul de la tempéature moyenne 
+```
+    avg_temp = total_temp / len(daily_forecasts)
+    return avg_temp
+```
+## Récupération de la température moyenne puis renvoi d'une chaîne de caractères. Une fonction simple pour intégrer facilement l'info dans le mail qu'on va envoyer à la fin.  
+```
+def get_weather():
+    avg_temp=get_avg_weather(city, checkin_date, checkout_date)
+    result=f'Hello {name}! We found out that you will visit {city} soon. 
+The average temperature in{city} between {checkin_date} and {checkout_date} 
+will be {avg_temp:.1f} degrees Celsius.!'
+    return(result)
+```
+
+## II. Web scraping du site Hotels.com 
+
+Extraire l'hôtel le moins cher pour une ville, nombre d'adultes et dates données. 
+Renvoyer un message avec le nom de l'hôtel et son prix/nuit. 
+
+## On utilise les hrefs du site Hotels.com pour extraire l'hôtel le moins cher
+Principe : 
+
+1. Création d'un objet BeautifulSoup à partir du contenu HTML avec 'html.parser'. 
+
+2. Création d'une fonction qui cherche l'hôtel le moins cher et en extrait le lien. 
+
+3. Regular expression pour extraire le prix par nuit et le nom de l'hôtel
+
+## Extraction de l'hôtel le moins cher 
+```
+def get_hrefs(url):
+    response = requests.get(url)
+    result = response.content
+    soup = BeautifulSoup(result, 'html.parser')
+    result_container=soup.find("div", class_=
+"uitk-card uitk-card-roundcorner-all uitk-card-has-primary-theme")
+    hotel_link=result_container.find("a", class_="uitk-card-link")
+    if hotel_link:
+        href=hotel_link.get("href")
+    else:
+        print("No hotel links found")
+
+```
+## Regular expression pour récuperer le nom de l'hôtel et le prix par nuit.
+```
+pattern = r'top_dp=(\d+)&top_cur=([A-Z]{3})'
+match = re.search(pattern, href)
+if match:
+  top_dp = match.group(1)
+  top_cur = match.group(2)
+pattern1 = r'/([^/]+)/\?'
+match1 = re.search(pattern1, href)
+if match1:
+  hotel_name = match1.group(1)
+  hotel_name = re.sub(r'-', ' ', hotel_name)
+```
+## Renvoi d'un message avec le nom de l'hôtel et son prix 
+```
+result2=f" We suggest for your staying to book '{Hotel}'. 
+You will only have to pay {top_dp}{top_cur} per night!"
+    return(result2)
+```
+## Fonction simple pour récuperer l'information 
+```
+def find_hotels():
+    hotel_cheap=get_hrefs(url)
+    return(hotel_cheap)
+```
+
+## III. Trouver les tweets et la nature des tweets pour les 30 derniers jours pour une ville donnée 
+
+SNSCRAPE : scraper les données de Twitter 
+
+PACKAGE TEXTBLOB : analyse de sentiments dans les tweets. 
+
+PRINCIPE : rentrer le nom de la ville. Le nombre de tweets est fixé à 100 et le nombre de jours à 30. 
+
+NOUS RENVOIE : nombre de tweets positifs, négatifs, neutres sur la ville dans les 30 derniers jours 
+
+
+## Création d'une fonction qui cherche les tweets contenant le nom de la ville dans les 30 derniers jours 
+
+```
+def analyze_sentiment(city):
+    noOfTweet=100
+    noOfDays=30
+    if city != '':
+```
+
+## Stockage des tweets 
+
+1. Stockage des tweets dans une liste contenant la date, l'identifiant, le contenu brut et le nom d'utilisateur.
+
+2. Boucle pour renvoyer le message "There are no tweets found for '{city}' in the past 30 days." s'il n'y pas de tweets trouvés. 
+
+3. Création d'un data frame avec les tweets de la liste faite avant. 
+
+4. Nettoyage des tweets en enlevant les mentions, les hashtags etc avec re.sub.  
+
+## Analyse de sentiments 
+Valeurs initiales et listes vides qui stockeront les tweets neutres, positifs et négatifs. 
+```
+def percentage(part,whole):
+        return 100 * float(part)/float(whole)
+    positive = 0
+    negative = 0
+    neutral = 0
+    tweet_list1 = []
+    neutral_list = []
+    negative_list = []
+    positive_list = []
+```
+## Utilisation de "polarity" pour mesurer le sentiment dans un tweet 
+``` 
+    for tweet in df['Text']:
+        tweet_list1.append(tweet)
+        blob = TextBlob(tweet)
+        polarity = blob.sentiment.polarity 
+    if polarity > 0:
+       positive_list.append(tweet)
+       positive += 1 
+    elif polarity < 0:
+         negative_list.append(tweet) 
+         negative += 1 
+    else:
+         neutral_list.append(tweet) 
+         neutral += 1 
+    positive = percentage(positive, len(df)) 
+    negative = percentage(negative, len(df))
+    neutral = percentage(neutral, len(df))
+```
+## Puis on fait une fonction pour avoir le texte suivant dans notre mail : 
+
+And last but not least, do you wonder what people recently think about {city}? 
+
+There have been {len(tweet_list1)} tweets on '{city}' for the last 30 days. 
+
+There are {len(positive_list)} tweet(s) with a positive Sentiment, {len(neutral_list)} tweet(s) with Neutral Sentiment and {len(negative_list)} tweet(s) with Negative Sentiment. 
+
+## IV. Envoi du mail 
+
+Lorsque l'individu rentre une destination, des dates et un nombre d'adultes pour son séjour, il va recevoir un e-mail avec : 
+
+-le nom et le prix de l'hôtel le moins cher
+
+-la météo
+
+-le nombre de tweets positifs et négatifs sur la ville 
+
+## Création du contenu de l'email 
+```
+def send_email():
+    message1 = get_weather()
+    if message1 is not None:
+        message1 = str(message1)
+
+    message2 = find_hotels()
+    if message2 is not None:
+        message2 = str(message2)
+
+    message3 = get_sent()
+    if message3 is not None:
+        message3 = str(message3)
+
+    message_final = (message1 or "") + (message2 or "") + (message3 or "")
+```
+## Création d'une adresse-mail qui enverra le mail 
+```
+s=smtplib.SMTP("smtp.gmail.com", 587)
+s.starttls()
+s.login("projectpythonse@gmail.com", "bapffljplqnfvgxs")
+SUBJECT="Informations"
+TEXT=message_final.encode('utf-8')
+message="Subject:{}\n\n{}".format(SUBJECT,TEXT.decode('utf-8'))
+```
+## Si l'adresse e-mail indiquée par l'utilisateur n'existe pas...
+
+On fait une boucle While qui s'arrête lorsque l'adresse e-mail est invalide. 
+
+Indiquera : "Invalid email address. Please try again."
+
+## Difficultés rencontrées 
+
+1. API du site Hotels.com difficile à exploiter alors passage au Web Scraping 
+
+2. Difficultés à scraper le site Hotels.com à cause des Xpaths 
+
+## Pistes d'améliorations 
+
+1. Indiquer plus de détails pour la météo, plutôt que seulement la température moyenne 
+
+2. Mieux gérer les erreurs 
+
+3. Ajouter d'autres fonctions qui apportent des infos sur la ville par exemple les endroits à visiter
+
