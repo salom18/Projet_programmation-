@@ -18,7 +18,7 @@ This program is intended to facilitate your trips by giving you informations abo
 - In "trip_information_provider.py" you will find the whole script of our program. 
 - In "packages.ipynb" you will find all the packages we used. 
 - In "cheapest_hotel.ipynb" you will find the code which allows to extract the cheapest hotel from the Hotels.com website 
-- In "average_temp.ipynb" you will find the code which allows to obtain the average temperature of a specific city in specific dates.
+- In "avg_temp.py" you will find the code which allows to obtain the average temperature of a specific city in specific dates.
 - In "tweetssentiment" you will find the code which allows to obtain the tweets about a specific city. 
 - In "sendemail.ipynb" you will find the function which allow to send an email with all the trip informations from the functions created above
 <a name="Utilisation"></a>
