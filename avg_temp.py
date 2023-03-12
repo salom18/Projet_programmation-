@@ -1,3 +1,5 @@
+###First part-Get the average temperature for the days of staying 
+
 import pyowm
 import requests
 import os
