@@ -21,6 +21,8 @@ This program is intended to facilitate your trips by giving you information abou
 - In "avg_temp.py" you will find the code which allows to obtain the average temperature of a specific city in specific dates.
 - In "tweetsentiment" you will find the code which allows to obtain the tweets about a specific city. 
 - In "sendmail.ipynb" you will find the function which allows to send an email with trip information from the functions created above
+- In "codeRmarkdown.Rmd" you will find our code for the project presentation 
+- In "presentation.html" you will find our slides for the project presentation
 <a name="Utilisation"></a>
 ## Utilisation
 The user must follow the following steps : 
