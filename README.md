@@ -47,7 +47,7 @@ The user must follow the following steps :
 ## Description of each file 
 There are several files and each of these files is a module containing a function to allow the extraction of the different desired elements.
 #### Cheapest_hotel
-This module contains the function to extract the cheapest hotel(its name and price) for a given destination, date and number of adults. Information is found on the Hotels.com website. 
+This module contains the function to extract the cheapest hotel (its name and price) for a given destination, date and number of adults. Information is found on the Hotels.com website. 
 #### Meteo 
 This module contains the function to determine the average temperature for a given city and dates. We used the OpenWeatherMap API. 
 #### Twitter 
