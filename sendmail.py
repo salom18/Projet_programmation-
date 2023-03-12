@@ -18,7 +18,7 @@ def send_email():
     message_final = (message1 or "") + (message2 or "") + (message3 or "")
     s=smtplib.SMTP("smtp.gmail.com", 587)
     s.starttls()
-    s.login("projectpythonse@gmail.com", "bapffljplqnfvgxs")
+    s.login("projectpythonse@gmail.com", "cbodytjuxpnmorbe")
     SUBJECT="Informations"
     TEXT=message_final.encode('utf-8')
     message="Subject:{}\n\n{}".format(SUBJECT,TEXT.decode('utf-8'))
