@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 import urllib.request
 from urllib.request import urlopen
 import json
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import StaleElementReferenceException
 
 #Get user input
 name=input("Enter your name: ")
