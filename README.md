@@ -51,7 +51,7 @@ This module contains the function to extract the cheapest hotel(its name and pri
 #### Meteo 
 This module contains the function to determine the average temperature for a given city and dates. We used the OpenWeatherMap API. 
 #### Twitter 
-This module contains the function to detect the number of tweets for the last 30 days about a specific city and the sentiments expressed. We used TextBlob. 
+This module contains the function to detect the number of tweets for the last 30 days about a specific city and the sentiments expressed. We used Snscrape to get the tweets and TextBlob to analyze the sentiments in these tweets. 
 #### Mail
 This module contains the mail function which asks the user for their email address and sends an email with all the details : average temperature, cheapest hotel and tweets. 
 
